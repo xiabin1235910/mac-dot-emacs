@@ -40,8 +40,8 @@
 (setq mac-command-modifier 'control)
 
 ;;js2-mode
-(setq js-indent-level 2)
-(setq js-switch-indent-offset 2)
+(setq js-indent-level 4)
+(setq js-switch-indent-offset 4)
 
 (setq-default tab-width 4 indent-tabs-mode nil) ;; disable tab
 
@@ -58,6 +58,11 @@
 (yas-global-mode 1)
 
 (global-set-key "\M- " 'hippie-expand)
+
+(global-set-key (kbd "<C-up>") 'shrink-window)
+(global-set-key (kbd "<C-down>") 'enlarge-window)
+(global-set-key (kbd "<C-left>") 'shrink-window-horizontally)
+(global-set-key (kbd "<C-right>") 'enlarge-window-horizontally)
 
 (require 'edit-server)
 (edit-server-start)
