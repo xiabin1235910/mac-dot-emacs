@@ -42,12 +42,12 @@
   (setq web-mode-css-indent-offset 4)
   (setq web-mode-code-indent-offset 4)
   (setq web-mode-attr-indent-offset 4)
-  (setq indent-tabs-mode t)
+  (setq indent-tabs-mode nil)
   (setq-default tab-width 4)
 )
 (add-hook 'web-mode-hook  'my-web-mode-hook)
 
-;;(add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
+(add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
 (add-to-list 'auto-mode-alist '("\\.jsx?\\'" . js2-jsx-mode))
 (add-to-list 'interpreter-mode-alist '("node" . js2-jsx-mode))
 
@@ -63,7 +63,7 @@
 (setq js-indent-level 4)
 (setq js-switch-indent-offset 4)
 
-;(setq-default tab-width 4 indent-tabs-mode nil) ;; disable tab
+(setq-default tab-width 4 indent-tabs-mode nil) ;; disable tab
 
 (exec-path-from-shell-initialize)
 (when (memq window-system '(mac ns))
@@ -102,6 +102,12 @@
 ;;(require 'ecb)
 
 (global-set-key (kbd "C-x f") 'find-file-in-project)
+(global-set-key (kbd "C-9") (kbd "C-x o"))
+(global-set-key (kbd "C-0") (kbd "C-c o"))
+
+(global-set-key (kbd "C-c d") 'make-directory)
+(global-set-key (kbd "C--") (kbd "M-x linum-mode"))
+(global-set-key (kbd "M-g") 'goto-line)
 
 (require 'edit-server)
 (edit-server-start)
